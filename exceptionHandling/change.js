@@ -10,7 +10,13 @@ function subtract(a, b) {
   return a - b;
 }
 
-throw new Error("")
+function multiply(a, b) {
+  return a * b;
+}
+
+function divide(a, b) {
+  return a / b;
+}
 
 function buttonClick() {
   try {
@@ -34,6 +40,13 @@ function buttonClick() {
     if (selector.value == "-") {
       document.querySelector(".ans").innerHTML = subtract(valueOne, valueTwo);
     }
+    if (selector.value == "*") {
+      document.querySelector(".ans").innerHTML = multiply(valueOne, valueTwo);
+    }
+    if (selector.value == "/") {
+      document.querySelector(".ans").innerHTML = divide(valueOne, valueTwo);
+    }
+
     firstInput.value = "";
     secondInput.value = "";
     console.log("Passed 2");
