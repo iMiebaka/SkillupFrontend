@@ -22,8 +22,6 @@ function buttonClick() {
   try {
     const valueOne = parseInt(firstInput.value);
     const valueTwo = parseInt(secondInput.value);
-    console.log(valueOne == NaN);
-    console.log("Passed 1");
     if (isNaN(valueOne)) {
       document.querySelector(".error").innerHTML =
         "First value is not a string";
@@ -49,7 +47,6 @@ function buttonClick() {
 
     firstInput.value = "";
     secondInput.value = "";
-    console.log("Passed 2");
     document.querySelector(".error").innerHTML = "";
   } catch (error) {
     console.error("Something went wrong", error);
