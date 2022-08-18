@@ -53,7 +53,7 @@ function buttonClick() {
     }
     // Perform arthmetic for addition
     if (selector.value == "+") {
-      document.querySelector(".ans").innerHTML = add(valueOne, valueTwo);
+      document.querySelector(".ans").innerHTML = add(alueOne, valueTwo);
     }
     // Perform arthmetic for subtraction
     if (selector.value == "-") {
@@ -77,8 +77,9 @@ function buttonClick() {
   } catch (error) {
     
     // Display error in error p tag
-    console.error("Something went wrong", error);
-    document.querySelector(".error").innerHTML = "Something went wrong";
+    document.querySelector(".error").innerHTML = error;
+    // Clear the answer innerHTML
+    document.querySelector(".ans").innerHTML = "";
   }
 }
 
