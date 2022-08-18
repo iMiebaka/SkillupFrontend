@@ -53,6 +53,7 @@ function buttonClick() {
     }
     // Perform arthmetic for addition
     if (selector.value == "+") {
+      // This will flag an error because of the syntax error
       document.querySelector(".ans").innerHTML = add(alueOne, valueTwo);
     }
     // Perform arthmetic for subtraction
