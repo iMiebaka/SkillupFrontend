@@ -15,6 +15,7 @@ const food = new Food();
 const d = food.addCheese(true).addMustard(true);
 console.log(d);
 
+
 // A much heavy approach
 let Request = function (amount) {
   this.amount = amount;
