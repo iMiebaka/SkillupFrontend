@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 1rem;
+  z-index: 1;
+}
+ul {
+  display: flex;
+  text-decoration: none;
+}
+li {
+  display: flex;
+  margin: 0 0.5rem;
+}
+.sidebar {
+  position: fixed;
+  z-index: 1;
+  height: 100%;
+  background-color: azure;
+  width: 7rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.sidebar-btn {
+  padding: 0.3rem;
+  cursor: pointer;
+  width: 20px;
+  border: 1px solid grey;
+  border-radius: 5px;
+}
+
+.sidebar-btn-open {
+  padding: 0.6rem;
+  cursor: pointer;
+  position: absolute;
+}
+
+.sidebar-btn-shift {
+  cursor: pointer;
+  position: absolute;
+  right: -2rem;
+  background-color: azure;
+  animation-name: example;
+  animation-duration: 1s;
+}
+@keyframes example {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: 112px;
+  }
+}
+
+.menu {
+  display: block;
+  margin: 10px;
+}
+.cta {
+  width: 100%;
+}
+.cta img {
+  width: 100%;
+}
+
+.cta-text {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  width: 50%;
+  /* color: white; */
+  background-color: rgba(240, 248, 255, 0.6);
+  padding: 3px;
+  border-radius: 4px;
+}

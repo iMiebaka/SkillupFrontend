@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />    <div class="container"> -->
+
+    <header>
+        <h3>Cide</h3>
+        <ul>
+            <a href="">
+                <li> Home</li>
+            </a>
+            <a href="">
+                <li> Kitchen</li>
+            </a>
+            <a href="">
+                <li> Locations</li>
+            </a>
+        </ul>
+    </header>
+    <section class="sidebar">
+
+        <div class="sidebar-btn">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+            </svg>
+        </div>
+        <a class="menu" href="">
+            Order Fish</a>
+        <a class="menu" href="">
+            Order Goat</a>
+        <a class="menu" href="">
+            Order Cow</a>
+        <a class="menu" href="">
+            Order Chef</a>
+    </section>
+    <main>
+        <section class="cta">
+            <img src="https://images.unsplash.com/photo-1661354421565-74ffd9650918?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+                alt="">
+            <div class="cta-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae dolorem corrupti eveniet esse ea iste
+                eligendi repellendus dicta tempore provident officia exercitationem quibusdam, saepe numquam ipsa.
+                Necessitatibus ex quae voluptatem?
+            </div>
+        </section>
+    </main>
+    </div>
+    <script>
+        const sidebarBtn = document.querySelector(".sidebar-btn")
+        const sidebar = document.querySelector(".sidebar")
+
+        let toggleShow = false
+
+        sidebarBtn.addEventListener("click", function () {
+            resizeSidebar(this)
+        })
+
+        function resizeSidebar(e) {
+            if (toggleShow) {
+                sidebar.style.transform = "translateX(0rem)"
+                e.classList.remove("sidebar-btn-shift")
+                toggleShow = false
+            }
+            else {
+                e.classList.add("sidebar-btn-shift")
+                sidebar.style.transform = "translateX(-7rem)"
+                toggleShow = true
+            }
+        }
+        resizeSidebar(sidebarBtn)
+
+
+    </script>
+    </body>
+
+</html>
