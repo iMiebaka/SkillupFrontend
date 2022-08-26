@@ -28,16 +28,14 @@ else{
 
 
 for (var i = 1; i < nums.length; i++) {
-    console.log("first loop");
-    console.log(i);
 
     for (var j = 0; j < i; j++) {
-        // if (nums[i] > nums[j]) {
-        //     var x = nums[i];
-        //     nums[i] = nums[j];
-        //     nums[j] = x;
-        // }
-        console.log("Second loop");
-        console.log(j);
+        if (nums[i] > nums[j]) {
+            var x = nums[i];
+            nums[i] = nums[j];
+            nums[j] = x;
+        }
     }
 }
+
+console.log(nums);
