@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Out</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+
+
+    </header>
+    <section class="container">
+        <form class="card-container">
+            <h2>Checkout </h2>
+            <div class="accepted-cards-container">
+                <!-- <span>Accepted Card</span> -->
+                <div class="accepted-cards">
+                    <img src="./media/icons8-mastercard-incorporated-an-american-multinational-financial-services-corporation-48.png"
+                        alt="" srcset="">
+                    <img src="./media/icons8-visa-48.png" alt="" srcset="">
+                </div>
+            </div>
+            <input required class="card-input" type="text" placeholder="FULL NAME">
+            <input required class="card-input card-number" type="text" placeholder="CARD NUMBER">
+            <div class="card-sub">
+                <input required class="card-input expiration-date" type="text" placeholder="MM/YY">
+                <input required class="card-input cvc-number" type="password" placeholder="CVC">
+            </div>
+            <button>
+                <span class="isloading-btn">
+                    <img src="./media/icons8-payment-64.png" alt="" srcset="">
+                </span>
+                <span class="static-btn">
+                    <img src="./media/icons8-payment-64.png" alt="" srcset="">
+                    Check Out
+                </span>
+            </button>
+        </form>
+        <div class="card-modal">
+        </div>
+        </>
+
+
+        <script src="index.js"></script>
+</body>
+
+</html>

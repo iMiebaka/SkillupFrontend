@@ -1,0 +1,83 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.card-modal {
+  background-color: grey;
+  opacity: 0.3;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+.container {
+  display: flex;
+  height: 100vh;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+.card-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border: 1px solid grey;
+  z-index: 2;
+}
+.card-container button {
+  border: none;
+  outline: none;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 2px 5px;
+  background-color: #4831c8;
+  font-size: large;
+}
+
+.static-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.isloading-btn img {
+  animation: 1s example;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  0% {
+    margin-left: 0px;
+  }
+  25% {
+    margin-left: 50px;
+  }
+  50% {
+    margin-right: 50px;
+  }
+  100% {
+    margin-right: 0px;
+  }
+}
+
+.accepted-cards-container {
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+}
+
+.card-container button img {
+  width: 30px;
+}
+.card-input {
+  height: 40px;
+  margin: 5px;
+  width: auto;
+  padding-left: 5px;
+  font-weight: bold;
+}

@@ -10,4 +10,4 @@
 This project will help students understand Frontend tools like HTML, CSS and Javascript
 
 ## Usage <a name = "usage"></a>
-Can be used by just about those looking to learn about Web development Frontend
+Can be used by just about those looking to learn about Frontend Web development 
