@@ -1,10 +1,10 @@
+// const img = document.querySelector("img")
 
-fetch("https://catfact.ninja/fact")
+fetch("https://dog.ceo/api/breeds/image/random")
 // Return a promise from the URL
-.then(function (response) {
-    // the converted data and return as a promise
+.then(function(response){
     return response.json()
-}).then(function (result) {
-    // Return the javascript object gotten from the response.json
-    console.log(result.fact);
+})
+.then(function(result){
+    console.log(result);
 })

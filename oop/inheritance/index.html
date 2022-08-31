@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+</head>
+
+<body>
+
+
+
+
+    <script>
+        class Car {
+
+            start() {
+                console.log("Start Engine");
+            }
+            stop() {
+                console.log("Stop Engine");
+            }
+        }
+
+
+        class Truck extends Car{
+
+            tow(){
+                console.log("I can tow a car");
+            }
+        }
+
+
+        const truck = new Truck
+        
+        truck.start()
+        truck.tow()
+        
+        const car = new Car
+        car.start()
+
+
+    </script>
+</body>
+
+</html>
