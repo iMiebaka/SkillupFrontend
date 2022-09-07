@@ -17,3 +17,12 @@ myPromise.then(
     /* code if some error */
   }
 );
+
+
+const promise = Promise.resolve(8)
+
+promise.then((e) => {
+   return e + 2
+}).then(e => {
+    document.write(e);
+})
