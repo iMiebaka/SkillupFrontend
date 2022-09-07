@@ -1,0 +1,35 @@
+@media (max-width: 720px) {
+  .sidebar {
+    width: 100px !;
+  }
+  .cover-image {
+    width: 50px;
+  }
+  .makehidden {
+    display: none;
+  }
+  .image-header {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0px;
+  }
+  .theme-section {
+    display: block;
+    margin-left: 15px;
+  }
+  .upload-area {
+    width: 60px;
+    margin-left: 12px;
+    height: 60px;
+  }
+
+  #resizer-btn {
+    margin-top: 5px;
+    transform: rotate(180deg);
+    border-top-right-radius: 100%;
+    border-bottom-right-radius: 100%;
+  }
+  .themeside-activate {
+    background-color: inherit;
+  }
+}

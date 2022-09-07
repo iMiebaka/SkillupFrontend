@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encapsulation</title>
+    <title>Polymorphism</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
             release() {
                 console.log("Bail is free");
             }
-            
+
             sackDPO(val) {
                 this.dpo = val
             }
@@ -32,15 +32,36 @@
             get seeDPO() {
                 return this.dpo
             }
-            
+
         }
 
-        Police.prototype.takeBribe = () => {
-            console.log("Fine me something");
+
+        class President {
+            dpo = "John Doe"
+
+            arrest() {
+                console.log("You're under arrest");
+            }
+
+            release() {
+                console.log("Bail is free");
+            }
+
         }
 
-        const police = new Police
 
+        class UnitedNation {
+            dpo = "John Doe"
+
+            arrest() {
+                console.log("You're under arrest");
+            }
+
+            release() {
+                console.log("Bail is free");
+            }
+
+        }
 
         // police.dpo = "Jane Doe" // Not this
         console.log(police.seeDPO);

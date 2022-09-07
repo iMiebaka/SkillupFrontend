@@ -15,6 +15,9 @@
 
     <script>
         class Car {
+            constructor(name) {
+                this.name = name
+            }
 
             start() {
                 console.log("Start Engine");
@@ -25,22 +28,22 @@
         }
 
 
-        class Truck extends Car{
+        class Truck extends Car {
+            constructor(name) { 
+                super(name)
 
-            tow(){
+                this.name = "Soe"
+            }
+
+            tow() {
                 console.log("I can tow a car");
             }
         }
 
 
-        const truck = new Truck
+        const truck = new Truck("Jeep")
+        console.log(truck.name);
         
-        truck.start()
-        truck.tow()
-        
-        const car = new Car
-        car.start()
-
 
     </script>
 </body>

@@ -6,17 +6,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audio File</title>
+
 </head>
 
 <body>
     <!-- Adding the control attributes, lets me control the file -->
-    <audio src="https://assets.mixkit.co/music/download/mixkit-tech-house-vibes-130.mp3" controls></audio>
+    <!-- <audio src="./Can't_Be_Friends_Instrumental(128k).mp3" controls></audio> -->
+
+    </br>
+    <input type="range" class="range" name="" id="" min="0" max="100" value="0">
+
+    <button class="play">Play</button>
+    <button class="pause">Pause</button>
+    <!-- https://mixkit.co/free-stock-music/ -->
+    </br>
+
+
+    <!-- 
+ -->
+
+
 
     <script>
-        // const audio = document.querySelector("audio")
-        // audio.src = "https://assets.mixkit.co/music/download/mixkit-tech-house-vibes-130.mp3"
 
-        // Get more files from: https://mixkit.co/free-stock-music/
+        const audio = document.createElement("audio")
+        audio.src = "./Can't_Be_Friends_Instrumental(128k).mp3"
+
+
+        const range = document.querySelector(".range")
+        const play = document.querySelector(".play")
+        const pause = document.querySelector(".pause")
+
+        setInterval(function () {
+            range.value = (audio.currentTime / audio.duration) * 100
+        }, 1000)
+
+
+
+        // Get more files from: 
     </script>
 </body>
 
