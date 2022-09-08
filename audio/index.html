@@ -14,34 +14,55 @@
     <!-- <audio src="./Can't_Be_Friends_Instrumental(128k).mp3" controls></audio> -->
 
     </br>
-    <input type="range" class="range" name="" id="" min="0" max="100" value="0">
+    <div class="playlist">
+        <input type="range" class="range" name="" id="" min="0" max="100" value="0">
 
-    <button class="play">Play</button>
-    <button class="pause">Pause</button>
-    <!-- https://mixkit.co/free-stock-music/ -->
-    </br>
+        <button class="play">Play</button>
+        <button class="pause">Pause</button>
+        <!-- https://mixkit.co/free-stock-music/ -->
+        </br>
 
 
-    <!-- 
- -->
 
+        <input type="file" name="" id="file">
+    </div>
 
 
     <script>
 
+
+        const playlist = document.querySelector(".playlist")
+
+
         const audio = document.createElement("audio")
-        audio.src = "./Can't_Be_Friends_Instrumental(128k).mp3"
+        playlist.appendChild(audio)
 
 
         const range = document.querySelector(".range")
         const play = document.querySelector(".play")
         const pause = document.querySelector(".pause")
 
-        setInterval(function () {
-            range.value = (audio.currentTime / audio.duration) * 100
-        }, 1000)
+        // setInterval(function () {
+        //     range.value = (audio.currentTime / audio.duration) * 100
+        // }, 1000)
 
+        const arr = [
+            { id: 0, title: "./Can't_Be_Friends_Instrumental(128k).mp3" },
+            { id: 1, title: "./Audio_002.wav" }
+        ]
 
+        function startPlaying(id) {
+            audio.src = arr[id].title
+            audio.play()
+        }
+
+        for (let index = 0; index < arr.length; index++) {
+            const btn = document.createElement("button")
+            btn.innerHTML = arr[index].title.substring(2,arr[index].title.length)
+            btn.setAttribute("onclick", "startPlaying(" + arr[index].id + ")")
+
+            playlist.appendChild(btn)
+        }
 
         // Get more files from: 
     </script>

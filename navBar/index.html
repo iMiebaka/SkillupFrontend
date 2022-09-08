@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav Bar</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="container">
+        <header>
+            <div class="header-mobile">
+                <h3><a href="">SiteOne</a></h3>
+                <button class="menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+            <ul id="nav-links" class="nav-links ">
+                <li><a class="nav-link" data-home="home" href="#">Home</a></li>
+                <li><a class="nav-link" data-home="account" href="#">Account</a></li>
+                <li><a class="nav-link" data-home="about-us" href="#">About us</a></li>
+            </ul>
+        </header>
+        <main>
+
+            <ul class="ul-check">
+                <li data-li="one">One</li>
+                <li data-li="two">Two</li>
+            </ul>
+            <!-- <div class="box"></div> -->
+        </main>
+    </div>
+
+    <script>
+        const ulLinks = document.querySelector(".ul-check")
+        const liLinks = document.querySelectorAll("li")
+
+
+        for (let index = 0; index < liLinks.length; index++) {
+            
+            liLinks[index].addEventListener('click', function () {
+
+                liLinks.forEach(e => {
+                    e.style.color = "black"
+                })
+                this.style.color = "green"
+            })
+
+        }
+
+
+        // ulLinks.addEventListener("click", function(e){
+        //     console.log(e.target);
+        // })
+    </script>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

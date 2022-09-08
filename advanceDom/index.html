@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advance DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav>
+        <header>
+            SuperSite
+
+            <button class="resizer">Resize</button>
+        </header>
+        <ul>
+            <li>Cars</li>
+            <li>Houses</li>
+            <li>Land</li>
+            <li>Land 2</li>
+            <li>Land 3</li>
+        </ul>
+    </nav>
+
+
+    <input type="text" value="" id="input-txt" class="input-txt-class">
+
+
+
+    <script>
+        const ul = document.querySelector("ul")
+        // const liList = document.querySelectorAll("li")
+
+        // for (let index = 0; index < liList.length; index++) {
+
+        //     liList[index].addEventListener("click", function(){
+        //         console.log(this);
+        //     })
+
+        // }
+
+
+        // const ulList = document.querySelector("ul")
+
+        // ulList.addEventListener("click", function (e) {
+        //     console.log(e.target.innerHTML);
+        // })
+
+
+        const input = document.getElementById("input-txt")
+
+        input.addEventListener("keydown", function (e) {
+            console.log(e.target.value); // Use this
+            // console.log(input.value); // Not this
+        })
+
+
+        const resizer = document.querySelector(".resizer")
+
+        let state = false
+        resizer.addEventListener("click", function () {
+            if(state){
+                ul.style.display = "none"
+            }    
+            else{        
+                ul.style.display = "flex"
+            }
+            state = !state
+        })
+
+    </script>
+</body>
+
+</html>

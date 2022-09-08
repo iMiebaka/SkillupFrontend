@@ -1,0 +1,35 @@
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+.resizer {
+  display: none;
+}
+
+ul {
+  display: flex;
+}
+
+li {
+  display: block;
+  margin-left: 5px;
+  font-size: larger;
+}
+
+@media screen and (max-width: 480px) {
+  nav {
+    display: block;
+  }
+  .resizer {
+    display: block;
+  }
+  ul {
+    display: none;
+  }
+}

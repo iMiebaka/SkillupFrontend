@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<>
+    <button class="play-btn">Play</button>
+    <button class="pause-btn">Pause</button>
+
+    <input type="range" name="" id="volume" min="0" max="100">
+    </br>
+
+    <input type="range" name="" id="seek" min="0" max="100">
+
+    <script>
+        const playBtn = document.querySelector('.play-btn')
+        const pauseBtn = document.querySelector('.pause-btn')
+
+        const volume = document.querySelector('volume')
+        const seek = document.querySelector('seek')
+
+        const audio = document.createElement("audio")
+        audio.src = "./Can't_Be_Friends_Instrumental(128k).mp3"
+
+        playBtn.addEventListener("click", function () {
+            audio.play()
+        })
+
+        pauseBtn.addEventListener("click", function () {
+            audio.pause()
+        })
+
+
+        volume.addEventListener("change", function () {
+            audio.volume = this.value / 100
+        })
+
+        // seek.addEventListener("change", function () {
+        //     audio.currentTime = 
+        // })
+
+    </script>
+    </body>
+
+</html>
