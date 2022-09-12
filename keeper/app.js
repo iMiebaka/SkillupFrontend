@@ -14,10 +14,11 @@ if (localStorage.getItem("notes") == null) {
 else {
     // Get what is in local storage
     const rawLocalstorage = localStorage.getItem("notes")
-    // convert local storage to string
+    // convert local storage to object
     const data = JSON.parse(rawLocalstorage);
     // Update to sync local storage and notes array
     note = data
+    // for each loop update the database
     for (let index = 0; index < data.length; index++) {
         const p = document.createElement("p")
         p.innerText = data[index]
