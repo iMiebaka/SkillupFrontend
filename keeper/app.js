@@ -1,40 +1,46 @@
-const keeper = document.getElementById("text-area")
 const form = document.querySelector("form")
-const noteArea = document.getElementById("note-area")
+const textArea = document.querySelector("#text-area")
+const noteArea = document.querySelector("#note-area")
+
+let note = []
 
 if (localStorage.getItem("notes") == null) {
-    localStorage.setItem("notes", "")
+    console.log("Does not exist");
+
+    const data = JSON.stringify([])
+    localStorage.setItem("notes", data)
+    console.log("Database created 🛢️");
 }
-else{
-    const data =  JSON.parse(localStorage.getItem("notes"))
+else {
+    // Get what is in local storage
+    const rawLocalstorage = localStorage.getItem("notes")
+    // convert local storage to string
+    const data = JSON.parse(rawLocalstorage);
+    // Update to sync local storage and notes array
+    note = data
     for (let index = 0; index < data.length; index++) {
-        const element = data[index];
         const p = document.createElement("p")
-        p.classList.add("single-note")
-        p.innerText = element
+        p.innerText = data[index]
         noteArea.appendChild(p)
     }
 }
-let notes = []
+
 
 
 form.addEventListener("submit", function (e) {
     e.preventDefault()
 
     const p = document.createElement("p")
-    p.classList.add("single-note")
-    p.innerText = keeper.value
+    p.innerText = textArea.value
     noteArea.appendChild(p)
 
-    notes.push(keeper.value)
-    const datbaseObj = JSON.stringify(notes)
-    localStorage.setItem("notes", datbaseObj)
-    keeper.value = ""
+    // Put inside the array
+    note.push(textArea.value)
+
+    // Add to localstorage
+    const data = JSON.stringify(note)
+    localStorage.setItem("notes", data)
+
+    // Clear the text area
+    textArea.value = ""
 })
-
-
-
-
-
-// noteArea.append(`<p class="single-note"> 
-// ${keeper.value} </p>`)
