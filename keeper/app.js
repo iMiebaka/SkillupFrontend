@@ -16,16 +16,21 @@ else {
     const rawLocalstorage = localStorage.getItem("notes")
     // convert local storage to object
     const data = JSON.parse(rawLocalstorage);
-    // Update to sync local storage and notes array
+    // Update to sync local storage and note array
     note = data
     // for each loop update the database
     for (let index = 0; index < data.length; index++) {
         const p = document.createElement("p")
         p.innerText = data[index]
+
+        // Create delete button
+        const btn = document.createElement("button")
+        btn.innerText = "Delete"
+
+        p.appendChild(btn)
         noteArea.appendChild(p)
     }
 }
-
 
 
 form.addEventListener("submit", function (e) {
@@ -33,6 +38,12 @@ form.addEventListener("submit", function (e) {
 
     const p = document.createElement("p")
     p.innerText = textArea.value
+
+    // Create delete button
+    const btn = document.createElement("button")
+    btn.innerText = "Delete"
+
+    p.appendChild(btn)
     noteArea.appendChild(p)
 
     // Put inside the array
@@ -45,3 +56,38 @@ form.addEventListener("submit", function (e) {
     // Clear the text area
     textArea.value = ""
 })
+
+
+
+
+const btn = document.createElement("button")
+
+btn.addEventListener("click", toggleState)
+
+let themeState = false
+
+if (localStorage.getItem("themeStorage") == null) {
+    // Set it up
+    localStorage.setItem("themeState", JSON.stringify(themeState))
+}
+else {
+    //   Get the local storage
+    themeState = JSON.parse(localStorage.getItem("themeStorage"))
+}
+
+
+
+function toggleState() {
+    if (themeState) {
+        // Set to dark mode
+        // Update the local storage
+    }
+    else {
+        // Set to light mode
+        // Update the local storage
+    }
+
+}
+
+
+toggleState()
