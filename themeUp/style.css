@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+}
+
+div {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  justify-content: center;
+  color: black;
+  transition: 0.5s ease-out;
+  flex-direction: column;
+}
+
+h1 {
+  color: inherit;
+}
+
+.theme-up {
+  background-color: black;
+  color: white;
+}
