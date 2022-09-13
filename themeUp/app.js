@@ -28,10 +28,12 @@ button.addEventListener("click", switchUp)
 function switchUp() {
     if (themeState) {
         div.classList.remove("theme-up")
+        button.innerText = "Dark"
     }
 
     else {
         div.classList.add("theme-up")
+        button.innerText = "Light"
     }
     themeState = !themeState
     const data = JSON.stringify(themeState)

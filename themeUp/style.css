@@ -8,7 +8,7 @@ div {
   height: 100vh;
   justify-content: center;
   color: black;
-  transition: 0.5s ease-out;
+  transition: 0.5s ease-in;
   flex-direction: column;
 }
 
