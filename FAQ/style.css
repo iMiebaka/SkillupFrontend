@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+details {
+  /* padding: 10px; */
+  margin: 10px;
+  border-radius: 2px;
+}
+
+details[open] {
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 0 0 1px 1px rgb(223, 223, 223);
+}
+
+details > summary::after {
+  content: url('https://img.icons8.com/material/48/expand-arrow--v1.png');
+  color: transparent;
+  transform: rotate(90deg);
+}
+
+details[open] > summary::after {
+  transform: rotate(0deg);
+}
+
+details > summary {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  list-style: none;
+  font-weight: bold;
+  transition: all 0.5s;
+}

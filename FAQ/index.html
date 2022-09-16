@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+    <details>
+        <summary>Lorem</summary>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magni eos laborum, vero mollitia deserunt,
+            libero, in saepe inventore repellat quaerat. Accusamus modi nulla, perferendis nesciunt maxime quod commodi
+            ratione?</p>
+    </details>
+
+    <details>
+        <summary>Lorem</summary>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi molestias unde soluta perferendis aliquam, ab
+            consequuntur ducimus repellat quia ipsam illo nostrum eius iure odit dolorem deleniti dignissimos labore
+            deserunt debitis nemo. Ea similique saepe sequi nobis numquam quis earum pariatur voluptas? Nulla, aut et.
+            Aliquid tempora dolore delectus commodi explicabo omnis, nulla corrupti ipsum possimus ipsam, voluptatem
+            officia quibusdam laudantium hic provident dolorem molestiae nobis ab, iure repudiandae earum. Facere
+            commodi sed ipsam, corporis minima nobis blanditiis, asperiores ipsum quaerat nihil atque excepturi neque
+            fugiat sapiente illum. Adipisci ut provident ab, enim numquam nesciunt neque at et maiores aliquam!</p>
+    </details>
+
+    <details>
+        <summary>Lorem</summary>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magni eos laborum, vero mollitia deserunt,
+            libero, in saepe inventore repellat quaerat. Accusamus modi nulla, perferendis nesciunt maxime quod commodi
+            ratione?</p>
+    </details>
+    <details>
+        <summary>Lorem</summary>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus magni eos laborum, vero mollitia deserunt,
+            libero, in saepe inventore repellat quaerat. Accusamus modi nulla, perferendis nesciunt maxime quod commodi
+            ratione?</p>
+    </details>
+
+    <script>
+        const makeAvailable = document.querySelectorAll(".make-available")
+
+
+        for (let index = 0; index < makeAvailable.length; index++) {
+
+            makeAvailable[0].addEventListener("click", function (e) {
+                if (this.parentElement.style.height == "auto") {
+                    this.parentElement.style.height = "28px"
+                }
+                else {
+                    this.parentElement.style.height = "auto"
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

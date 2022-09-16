@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sub One</title>
+</head>
+
+<body>
+
+    <form action="">
+        <input type="text" name="" id="username" placeholder="Enter Username">
+        <br>
+        <input type="password" name="" id="password" placeholder="Enter Password">
+        <br>
+        <label for="check-box">
+            <input type="checkbox" name="" id="check-box">
+            Show Password
+        </label>
+        <br>
+        <label for="save-password">
+            <input type="checkbox" name="" id="save-password">
+            Save Login
+        </label>
+    </form>
+
+
+    <script>
+        const username = document.querySelector("#username")
+        const password = document.querySelector("#password")
+        const togglePasswordShow = document.querySelector("#check-box")
+        const passwordSave = document.querySelector("#save-password")
+
+
+        if (localStorage.getItem("loginDetails") == null) {
+            const tempCred = JSON.stringify({
+                username: "",
+                password: ""
+            })
+            localStorage.setItem("loginDetails", tempCred)
+        }
+        else {
+            const rawData = localStorage.getItem("loginDetails")
+            const parseCred = JSON.parse(rawData)
+            if(parseCred.username != "" || parseCred.password != ""){
+                passwordSave.setAttribute("checked", true)
+            }
+            username.value = parseCred.username
+            password.value = parseCred.password
+        }
+
+
+        passwordSave.addEventListener("change", function (e) {
+            if (e.target.checked) {
+                const tempCred = JSON.stringify({
+                    username: username.value,
+                    password: password.value
+                })
+                localStorage.setItem("loginDetails", tempCred)
+            }
+            else {
+                const tempCred = JSON.stringify({
+                username: "",
+                password: ""
+            })
+            localStorage.setItem("loginDetails", tempCred)
+            }
+        })
+
+
+        togglePasswordShow.addEventListener("change", function (e) {
+            if (e.target.checked) {
+                password.type = "text"
+            }
+            else {
+                password.type = "password"
+            }
+        })
+
+    </script>
+</body>
+
+</html>
