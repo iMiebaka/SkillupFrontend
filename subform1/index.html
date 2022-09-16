@@ -10,7 +10,7 @@
 
 <body>
 
-    <form action="">
+    <form action="" method="pos">
         <input type="text" name="" id="username" placeholder="Enter Username">
         <br>
         <input type="password" name="" id="password" placeholder="Enter Password">
@@ -24,6 +24,7 @@
             <input type="checkbox" name="" id="save-password">
             Save Login
         </label>
+        <button>Login</button>
     </form>
 
 
@@ -45,6 +46,7 @@
             const rawData = localStorage.getItem("loginDetails")
             const parseCred = JSON.parse(rawData)
             if(parseCred.username != "" || parseCred.password != ""){
+               // Check save login box
                 passwordSave.setAttribute("checked", true)
             }
             username.value = parseCred.username
@@ -72,10 +74,10 @@
 
         togglePasswordShow.addEventListener("change", function (e) {
             if (e.target.checked) {
-                password.type = "text"
+                password.setAttribute("type", "text")
             }
             else {
-                password.type = "password"
+                password.setAttribute("type", "password")
             }
         })
 
