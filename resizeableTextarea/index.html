@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resizable Textarea</title>
+
+    <style>
+    </style>
+
+</head>
+
+<body>
+
+
+    <textarea name="" id="" rows="1" autofocus></textarea>
+
+    <script>
+        const textArea = document.querySelector("textarea")
+        textArea.addEventListener("keyup", function (e) {
+
+            const col = this.cols + 2
+            const charLength = this.value.split("\n").length
+            console.log(col, this.value.length);
+            if (col == this.value.length) {
+                // this.rows = this.rows + 1
+            }
+            else if (e.key == "Enter") {
+                this.rows = this.rows + 1
+            }
+        })
+    </script>
+
+</body>
+
+</html>
