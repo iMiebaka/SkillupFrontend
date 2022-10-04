@@ -5,13 +5,19 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="style-src 'self' https://fonts.googleapis.com" />
-    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="Content-Security-Policy"
+        content="style-src 'self' https://fonts.googleapis.com; img-src https://images.unsplash.com; frame-src https://www.youtube.com;" />
+    <link rel=" stylesheet" href="style.css">
     <title>Document</title>
 </head>
 
 <body>
-    <h1>Hello World</h1>
+    <h1>My CSP</h1>
+
+    <iframe width="690" height="388" src="https://www.youtube.com/embed/1JmevmE6AnI"
+        title="Things Aren't Looking Great for the UK" frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
 </body>
 
 </html>
