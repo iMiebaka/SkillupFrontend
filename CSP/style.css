@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,500;0,600;0,800;1,300;1,400;1,500&display=swap');
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Poppins;
+  background-image: url(https://images.unsplash.com/photo-1664829698872-d25e65dc302d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1031&q=80);
+}
+
+  
 h1 {
-  color: red;
+  /* color: white; */
+}
+
+img {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
 }
