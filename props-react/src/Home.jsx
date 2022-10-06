@@ -4,8 +4,9 @@ import Nav from "./Nav";
 
 /*
 Assignment
-- Change the location using the setLocation function in the body prop
-- Set the props to EN
+- Change the location using the setLocation function in the Body component
+- Change the state using the setLocation function  to EN
+- Do that using a button
 */
 
 
