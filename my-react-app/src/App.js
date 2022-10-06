@@ -3,7 +3,7 @@ import './App.css';
 
 function App() {
 
-console.log(useState(""));
+console.log(useState("rr")[0]);
   const [name, setName] = useState("");
   const [age, setAge] = useState("");
   const [showTemplate, setShowtemplate] = useState(false)
@@ -15,7 +15,6 @@ console.log(useState(""));
     setShowtemplate(true)
   }
 
-  
 
   return (
     <div className="App">
