@@ -9,13 +9,27 @@ Assignment
 - Do that using a button
 */
 
-
 function Home() {
   const [location, setLocation] = useState("NG");
+  const data = "This body should change the nav component";
+  const [greeting, setGreeting] = useState([
+    "Hello",
+    "How are you",
+    { low: "lower" },
+  ]);
+
+  setTimeout(() => console.log(greeting), 2000);
+  // setInterval(() => setGreeting(),
+  // 4000)
   return (
     <div>
-      <Nav location___={location} />
-      <Body />
+      <Nav region={location} asset={211} />
+      <Body
+        letter={data}
+        greet={greeting}
+        setGreet={setGreeting}
+        setLocation={setLocation}
+      />
     </div>
   );
 }

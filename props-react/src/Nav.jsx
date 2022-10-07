@@ -1,7 +1,7 @@
-function Nav({ location___ }) {
+function Nav({region}) {
     return (
       <div>
-        YouTube <sup> {location___} </sup>
+        YouTube <sup> {region} </sup>
       </div>
     );
   }
