@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Navbar from './components/navbar';
 import Lists from './lists/list';
@@ -15,6 +15,9 @@ function App() {
     setAge(age)
     setShowtemplate(true)
   }
+
+ 
+
 
   return (
     <div className="App">
