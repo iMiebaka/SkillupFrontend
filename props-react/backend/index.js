@@ -8,7 +8,7 @@ app.use(express.json())
 
 app.post("/", (req, res) => {
     console.log(req.body);
-    res.json({ messages: "Login Successfully" })
+    res.json({ message: "Data submitted" })
 })
 
 app.listen(2000, () => {

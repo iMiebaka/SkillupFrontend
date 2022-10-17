@@ -1,14 +1,28 @@
 import React from "react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
+import axios from "axios";
 
 function Form() {
   const { register, handleSubmit } = useForm();
-    const [numbers, setNumbers] = useState([])
+  const [numbers, setNumbers] = useState([]);
   const submitData = (e) => {
-    // console.log(e);
-    setNumbers([...numbers, e.phoneNumber])
-    console.log("Data submitted");
+    console.log(JSON.stringify(e));
+
+    setNumbers([...numbers, e.phoneNumber]);
+    // fetch("http://127.0.0.1:2000", {
+    //   method: "POST",
+    //   body: JSON.stringify(e),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // })
+    //   .then((res) => res.json())
+    //   .then((result) => alert(result.message));
+
+    axios.post("http://127.0.0.1:2000", e).then((result) => {
+      alert(result.data.message);
+    });
   };
   return (
     <div>
@@ -18,12 +32,12 @@ function Form() {
         <br />
         <button type="submit">Send</button>
       </form>
-      <Contacts numbers={numbers}  />
+      <Contacts numbers={numbers} />
     </div>
   );
 }
 
-const Contacts = ({numbers}) => {
+const Contacts = ({ numbers }) => {
   return (
     <div>
       {numbers.map((n, i) => (
