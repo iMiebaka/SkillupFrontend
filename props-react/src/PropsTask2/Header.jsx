@@ -1,12 +1,12 @@
-import React from 'react'
+import React from "react";
 
-function Header({siteName}) {
-
+function Header({ siteName }) {
   return (
-    <div><p></p> {siteName} 
-    <input type="text" />
+    <div>
+      <p></p> {siteName}
+      <input type="text" />
     </div>
-  )
+  );
 }
 
-export default Header
+export default Header;
