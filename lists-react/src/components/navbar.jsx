@@ -9,7 +9,7 @@ const Navbar = () => {
             <NavLink to="/about"><ListItem cursor={"pointer"} _hover={{transform: "scale(.9)"}} transform="250ms ease" margin={"0 .9rem"}>About</ListItem></NavLink>
             <NavLink to="/product"><ListItem cursor={"pointer"} _hover={{transform: "scale(.9)"}} transform="250ms ease" margin={"0 .9rem"}>Products</ListItem></NavLink>
             <NavLink to="/faqs"><ListItem cursor={"pointer"} _hover={{transform: "scale(.9)"}} transform="250ms ease" margin={"0 .9rem"}>FAQs</ListItem></NavLink>
-            <NavLink to="/"></NavLink><ListItem cursor={"pointer"} _hover={{transform: "scale(.9)"}} transform="250ms ease" margin={"0 .9rem"}>Contact</ListItem>
+            <NavLink to="/posts"><ListItem cursor={"pointer"} _hover={{transform: "scale(.9)"}} transform="250ms ease" margin={"0 .9rem"}>Posts</ListItem></NavLink>
             </UnorderedList>
         </Flex>
     )
