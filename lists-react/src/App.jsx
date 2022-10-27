@@ -4,6 +4,11 @@ import Navbar from './components/navbar';
 import Styling from './components/styling/styling';
 import Lists from './lists/list';
 import PropDemo from './propDemo/propDemo';
+import {Routes, Route} from 'react-router-dom'
+import Styling2 from './components/styling copy/styling';
+import Styling3 from './components/styling copy 2/styling';
+import Home from './components/styling copy 3/styling';
+import ListItem from './lists/listItem/listItem';
 
 function App() {
   const [name, setName] = useState("");
@@ -22,9 +27,19 @@ function App() {
 
   return (
     <div className="App">
-      <Styling />
-      {/* <Navbar />
-      <Lists /> */}
+      <Navbar />
+
+      <Routes>
+          <Route path="" element={<Home />} />
+          <Route path="/about" element={<Styling />} />
+          <Route path="/product" element={<Styling2 />} />
+          <Route path="/faqs" element={<Styling3 />} />
+          <Route path="/posts" element={<Lists />} />
+          <Route path="/posts/:id" element={<ListItem />} />
+      </Routes>
+     
+
+      
       {/* <div className="app" style={{ border: "1px solid lightgray", padding: "1rem"}}>
       <h1 style={{marginTop: "17rem"}}>STATES & PROPS</h1>
       {showTemplate && <p>My name is {name}, and i am {age} years old.</p>}
