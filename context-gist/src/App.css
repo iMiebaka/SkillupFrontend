@@ -34,6 +34,16 @@
 
 .card {
   padding: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* optional*/
+}
+
+.card-images {
+  width: 300px;
+  height: 400px;
+  /* background-color: antiquewhite; */
+  margin: 7px 10px;
 }
 
 .read-the-docs {

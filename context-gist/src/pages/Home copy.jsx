@@ -6,24 +6,21 @@ import axios from "axios";
 
 function Home() {
   const { count, setCount } = useContext(Counter);
-  const [images, setImages] = useState([""]);
-  const [page, setPage] = useState(1);
+
+  const [images, setImages] = useState(["","", ""]);
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await axios.get(
-          "https://api.pexels.com/v1/search?query=cars&per_page=10&page=2",
-          {
-            headers: {
-              Authorization: import.meta.env.VITE_PEXEL_API_KEY,
-            },
-          }
-        );
-        setImages(result.data.photos);
-      } catch (error) {}
-    };
-    fetchData();
-  }, [page]);
+    axios
+      .get("https://api.pexels.com/v1/search?query=nature&per_page=10", {
+        headers: {
+          Authorization:
+            "563492ad6f91700001000001e814b769ef974415b6c8b7ada74bf65b",
+        },
+      })
+      .then((res) => {
+        console.log(res.data.photos);
+        setImages(res.data.photos);
+      });
+  }, []);
 
   return (
     <div className="App">
@@ -39,18 +36,12 @@ function Home() {
       <div className="card">
         {images?.map((i, k) => {
           return (
-            <div key={k} className="card-images">
-              <img loading="lazy"
-                src={i?.src?.portrait}
-                alt=""
-                style={{ width: "100%", height: "100%" }}
-                srcSet=""
-              />
+            <div key={k} className="card-images" style={{}}>
+              <img src={i?.src?.portrait} alt="" loading="lazy" srcSet="" style={{width: "100%", height: "100%"}} />
             </div>
           );
         })}
       </div>
-      <button>LOAD MORE</button>
     </div>
   );
 }
