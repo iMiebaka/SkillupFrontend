@@ -6,8 +6,9 @@ import axios from "axios";
 
 function Home() {
   const { count, setCount } = useContext(Counter);
-  const [images, setImages] = useState([""]);
-  
+  const [images, setImages] = useState([]);
+  const [page, setPage] = useState(1);
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -15,15 +16,18 @@ function Home() {
   const fetchData = async () => {
     try {
       const result = await axios.get(
-        "https://api.pexels.com/v1/search?query=house&per_page=12&page=2",
+        "https://api.pexels.com/v1/search?query=house&per_page=12&page=" + page,
         {
           headers: {
             Authorization: import.meta.env.VITE_PEXEL_API_KEY,
           },
         }
       );
-      setImages(result.data.photos);
-    } catch (error) {}
+      setImages([...images,result.data.photos]);
+      setPage(result.data.page + 1);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
@@ -41,7 +45,8 @@ function Home() {
         {images?.map((i, k) => {
           return (
             <div key={k} className="card-images">
-              <img loading="lazy"
+              <img
+                loading="lazy"
                 src={i?.src?.portrait}
                 alt=""
                 style={{ width: "100%", height: "100%" }}
@@ -51,7 +56,7 @@ function Home() {
           );
         })}
       </div>
-      <button>LOAD MORE</button>
+      <button onClick={() => setPage(page + 1)}>LOAD MORE</button>
     </div>
   );
 }
