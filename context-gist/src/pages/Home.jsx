@@ -15,7 +15,7 @@ function Home() {
   const fetchData = async () => {
     try {
       const result = await axios.get(
-        "https://api.pexels.com/v1/search?query=cars&per_page=10&page=2",
+        "https://api.pexels.com/v1/search?query=house&per_page=12&page=2",
         {
           headers: {
             Authorization: import.meta.env.VITE_PEXEL_API_KEY,
@@ -36,7 +36,7 @@ function Home() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Nature</h1>
+      <h1>House</h1>
       <div className="card">
         {images?.map((i, k) => {
           return (
