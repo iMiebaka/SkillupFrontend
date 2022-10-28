@@ -7,23 +7,24 @@ import axios from "axios";
 function Home() {
   const { count, setCount } = useContext(Counter);
   const [images, setImages] = useState([""]);
-  const [page, setPage] = useState(1);
+  
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const result = await axios.get(
-          "https://api.pexels.com/v1/search?query=cars&per_page=10&page=2",
-          {
-            headers: {
-              Authorization: import.meta.env.VITE_PEXEL_API_KEY,
-            },
-          }
-        );
-        setImages(result.data.photos);
-      } catch (error) {}
-    };
     fetchData();
-  }, [page]);
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const result = await axios.get(
+        "https://api.pexels.com/v1/search?query=cars&per_page=10&page=2",
+        {
+          headers: {
+            Authorization: import.meta.env.VITE_PEXEL_API_KEY,
+          },
+        }
+      );
+      setImages(result.data.photos);
+    } catch (error) {}
+  };
 
   return (
     <div className="App">
