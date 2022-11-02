@@ -23,7 +23,11 @@ function Home() {
           },
         }
       );
-      setImages([...images,result.data.photos]);
+      {
+        images.length == 0
+          ? setImages(result.data.photos)
+          : setImages([...images, ...result.data.photos]);
+      }
       setPage(result.data.page + 1);
     } catch (error) {
       console.log(error);
@@ -56,7 +60,7 @@ function Home() {
           );
         })}
       </div>
-      <button onClick={() => setPage(page + 1)}>LOAD MORE</button>
+      <button onClick={fetchData}>LOAD MORE</button>
     </div>
   );
 }
