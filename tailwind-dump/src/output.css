@@ -621,6 +621,10 @@ video {
   display: grid;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -730,6 +734,14 @@ video {
 
 .bg-\[url\(\"\$\{reactLogo\}\"\)\] {
   background-image: url("${reactLogo}");
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .p-1 {

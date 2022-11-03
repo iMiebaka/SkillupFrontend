@@ -9,14 +9,7 @@ function App() {
 
   return (
     <div 
-    className={`bg-[url(${coverImage})]`}
-    style={{
-      // backgroundImage:  `url("https://images.pexels.com/photos/46160/field-clouds-sky-earth-46160.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1")`,
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
-      height: "100vh",
-      // width: "100vw"
-    }}>
+    className={`h-screen bg-cover bg-no-repeat bg-[url(${coverImage})]`}>
 
     <div 
     className="container mx-auto">
