@@ -41,7 +41,7 @@ function App() {
         type="file"
         name=""
         id=""
-        accept="*/images"
+        accept="image/*"
       />
       {images.map((i, k) => (
         <img
