@@ -7,19 +7,25 @@
     "start": "vite",
     "server": "nodemon server.js",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "tailwind": "npx tailwindcss -i ./src/index.css -o ./src/output.css --watch"
   },
   "dependencies": {
+    "animate.css": "^4.1.1",
+    "axios": "^1.2.1",
     "axois": "^0.0.1-security",
+    "cors": "^2.8.5",
     "express": "^4.18.2",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-toastify": "^9.1.1"
   },
   "devDependencies": {
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
     "autoprefixer": "^10.4.13",
+    "nodemon": "^2.0.20",
     "postcss": "^8.4.19",
     "tailwindcss": "^3.2.4",
     "vite": "^3.2.3"
