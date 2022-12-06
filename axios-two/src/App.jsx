@@ -23,8 +23,8 @@ function App() {
     setErrorMessage("");
 
     axios
-      .get("http://localhost:2022/")
-      // .post("http://localhost:2022/")
+      // .get("http://localhost:2022/")
+      .post("http://localhost:2022/")
       // .get("http://localhost:2022/response")
       // .get("http://localhost:2022/request")
       // .get("http://localhost:2022/server")
@@ -48,6 +48,7 @@ function App() {
       })
       .finally(() => {
         setSubmittingForm(false);
+        console.log("finishing promise");
       });
   };
   return (
@@ -63,7 +64,7 @@ function App() {
           </p>
         </div>
         <form
-          onSubmit={submitForm}
+          onSubmit={submittingForm ? (e) => e.preventDefault() :submitForm}
           class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0"
         >
           <p class="text-xs text-green-500 mt-3">{successMessage}</p>
