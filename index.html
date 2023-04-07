@@ -1,16 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web API</title>
-</head>
+  </head>
 
-<body>
-    <img src="" alt="loading" width="100" height="100">
-    <script src="index.js"></script>
-</body>
+  <body>
+    <input type="text" />
 
+    <div>
+      <p>How are you?</p>
+    </div>
+    <p id="demo">Helo</p>
+    <button id="first-button">Fake Button</button>
+    <button id="second-button">Second Button</button>
+
+    <script>
+      document.querySelector("p").innerText = "Hello";
+
+      
+      document.querySelector("#first-button").addEventListener("click", (e) => {
+        console.log(e);
+        alert("I love buttons");
+      });
+
+      document
+        .querySelector("#second-button")
+        .addEventListener("click", (e) => {
+          document.querySelector("#first-button").click()
+        });
+    </script>
+
+    <!-- <script>
+      /*
+        Write a program that takes a number as input and checks if it's positive, 
+        negative, or zero. The program should log a message to the 
+        console that indicates whether the number is positive, negative, or zero.
+        */
+      let continueLoop = true;
+      let input;
+      let value;
+      let errorMessage = ""
+      while (continueLoop) {
+        input = prompt(errorMessage + " Enter a number so i can check it");
+        if (input != null) {
+          value = parseFloat(input);
+          if (isNaN(input)) console.error("You did not enter a number");
+          else if (input.length == 0) console.error("You entered nothing");
+          else continueLoop = false;
+        }
+        errorMessage = "You think say you get sense"
+      }
+
+      //   checkNumber();
+      function checkNumber() {
+        if (value >= 1) console.log("This is a postive number");
+        else if (value == 0) console.log("This is Zero");
+        else if (value < 0) console.log("This is a negative number");
+        else console.error("Invalid number");
+      }
+    </script> -->
+
+    <!-- <script>
+      class Car {
+        constructor(name, year, engine) {
+          this.name = name;
+          this.year = year;
+          this.engine = engine;
+
+        }
+        age() {
+          const date = new Date();
+          return date.getFullYear() - this.year;
+        }
+      }
+      const engine = {type: "20 horsepower", chassis: "ES3730"}
+      const car = new Car("Honda", 1995, engine);
+      console.log(car.engine);
+    </script> -->
+
+
+    
+  </body>
 </html>

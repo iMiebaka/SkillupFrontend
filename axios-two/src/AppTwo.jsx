@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { ToastContainer, toast, cssTransition } from "react-toastify";
 import { v4 as uuid } from "uuid";
-import "animate.css/animate.min.css";
-import "react-toastify/dist/ReactToastify.css";
-import "./App.css";
+// import { ToastContainer, toast, cssTransition } from "react-toastify";
+// import "animate.css/animate.min.css";
+// import "react-toastify/dist/ReactToastify.css";
+// import "./App.css";
 
-const bounce = cssTransition({
-  enter: "animate__animated animate__bounceIn",
-  exit: "animate__animated animate__bounceOut",
-});
+// const bounce = cssTransition({
+//   enter: "animate__animated animate__bounceIn",
+//   exit: "animate__animated animate__bounceOut",
+// });
 
 function App() {
   const [items, setItems] = useState([]);
@@ -17,7 +17,7 @@ function App() {
   const [itemName, setItemName] = useState("");
   const [itemQuantity, setItemQuantity] = useState("");
 
-  const [list, setList] = useState({
+  const [list, setListData] = useState({
     title: "",
     reminder: "",
     item: [],
@@ -25,7 +25,7 @@ function App() {
   const submitForm = (e) => {
     e.preventDefault();
     setItems([...items, list]);
-    setList({
+    setListData({
       title: "",
       reminder: "",
       item: [],
@@ -33,6 +33,7 @@ function App() {
   };
 
   const addItems = () => {
+
     const tempData = list;
     tempData.title = title;
     tempData.reminder = date;
@@ -44,12 +45,31 @@ function App() {
     } else {
       tempData.item = [{ name: itemName, quantity: itemQuantity }];
     }
-    setList(tempData);
+    console.log(tempData);
+    setListData(() => tempData);
   };
   return (
     <section className="text-gray-600 body-font">
-      <ToastContainer transition={bounce} />
+      {/* <ToastContainer transition={bounce} /> */}
       <div className="container px-5 py-1 mx-auto flex flex-wrap">
+        <div className="flex flex-wrap gap-x-2">
+          {items.map((i, k) => {
+            return (
+              <div key={uuid()} className="border">
+                <h2>{i.title}</h2>
+                <h3>{i.reminder}</h3>
+                <div>
+                  {i.item.map((i) => (
+                    <div key={uuid()}>
+                      <p>{i.name}</p>
+                      <p>{i.quantity}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            );
+          })}
+        </div>
         <div className="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-2 md:mt-0">
           <h2 className="text-gray-900 text-lg font-medium title-font mb-5">
             Add Items
@@ -137,7 +157,7 @@ function App() {
               <h3>{list.reminder}</h3>
               <div>
                 <ul>
-                  {list?.item.map((i, k) => (
+                  {list?.item?.map((i, k) => (
                     <li key={uuid()}>
                       <span className="mr-2">{i?.name}</span>
                       <span>{i?.quantity}</span>
@@ -147,24 +167,6 @@ function App() {
               </div>
             </div>
           </div>
-        </div>
-        <div className="flex flex-wrap gap-x-2">
-          {items.map((i, k) => {
-            return (
-              <div key={uuid()} className="border">
-                <h2>{i.title}</h2>
-                <h3>{i.reminder}</h3>
-                <div>
-                  {i.item.map((i) => (
-                    <div key={uuid()}>
-                      <p>{i.name}</p>
-                      <p>{i.quantity}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            );
-          })}
         </div>
       </div>
     </section>

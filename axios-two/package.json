@@ -13,7 +13,6 @@
   "dependencies": {
     "animate.css": "^4.1.1",
     "axios": "^1.2.1",
-    "axois": "^0.0.1-security",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "react": "^18.2.0",

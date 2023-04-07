@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Basic Calculator</title>
+  </head>
+  <body>
+    <input placeholder="Enter first value" type="text" id="first-input" />
+    <input placeholder="Enter second value" type="text" id="second-input" />
+    <div style="margin: 1rem">
+      <button id="add">+</button>
+      <button id="subtract">-</button>
+      <button id="divide">/</button>
+      <button id="multiply">*</button>
+    </div>
+    <h2 id="answer"></h2>
+
+    <script src="./aritmetric.js"></script>
+    <script>
+      const arthmetric = new Arthmetric();
+
+      // Input field
+      const firstValue = document.getElementById("first-input");
+      const secondValue = document.getElementById("second-input");
+
+      // Answer Place
+      const answer = document.getElementById("answer");
+
+      // Arthmetric button
+      document.getElementById("add").addEventListener("click", () => {
+        answer.innerText = arthmetric.add(firstValue.value, secondValue.value);
+      });
+      document.getElementById("subtract").addEventListener("click", () => {
+        answer.innerText = arthmetric.subtract(
+          firstValue.value,
+          secondValue.value
+        );
+      });
+      document.getElementById("divide").addEventListener("click", () => {
+        answer.innerText = arthmetric.divide(
+          firstValue.value,
+          secondValue.value
+        );
+      });
+      document.getElementById("multiply").addEventListener("click", () => {
+        answer.innerText = arthmetric.multiply(
+          firstValue.value,
+          secondValue.value
+        );
+      });
+    </script>
+  </body>
+</html>

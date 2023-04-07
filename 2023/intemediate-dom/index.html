@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone number formater</title>
+  </head>
+  <body>
+    <h1>Phone number formater</h1>
+    <input type="tel" />
+    <p>0803 398 3859</p>
+    <script>
+      const inputField = document.querySelector("input");
+      inputField.addEventListener("keyup", () => {
+        if (inputField.value.length == 4)
+          inputField.value = inputField.value + " ";
+        if (inputField.value.length == 8)
+          inputField.value = inputField.value + " ";
+      });
+    </script>
+  </body>
+</html>
