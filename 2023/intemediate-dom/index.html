@@ -11,11 +11,24 @@
     <input type="tel" />
     <p>0803 398 3859</p>
     <script>
+      try {
+        const _inputField = document.querySelector("span");
+        console.log("We are all good");
+        const mainValue = "2";
+        if (typeof mainValue != "number") {
+          throw  Error("This is not a number");
+        }
+        const answer = 2 + mainValue;
+        console.log(answer);
+      } catch (e) {
+        console.error(e.message);
+      }
+
       const inputField = document.querySelector("input");
-      inputField.addEventListener("keyup", () => {
+      inputField.addEventListener("keyup", (e) => {
         if (inputField.value.length == 4)
           inputField.value = inputField.value + " ";
-        if (inputField.value.length == 8)
+        else if (inputField.value.length == 8)
           inputField.value = inputField.value + " ";
       });
     </script>
